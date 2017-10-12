@@ -1,0 +1,7 @@
+<mat-toolbar color="primary" >
+  <a routerLink="/" class="brand">
+    <mat-icon>bookmark</mat-icon>
+    <span>Aware</span>
+  </a>
+  <a [routerLink]="link.url" *ngFor="let link of links">{{ link.text }}</a>
+</mat-toolbar>

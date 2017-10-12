@@ -1,0 +1,9 @@
+mat-card {
+  min-width: 300px;
+}
+
+@media (min-width: 682px) {
+  mat-card {
+    min-width: 400px;
+  }
+}

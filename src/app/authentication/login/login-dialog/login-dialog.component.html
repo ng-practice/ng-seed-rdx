@@ -1,0 +1,29 @@
+<awr-user-dialog title="Login">
+  <form class="content" [formGroup]="login">
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="email"
+        type="text"
+        placeholder="Email address">
+      <mat-error *ngIf="login.controls.email.hasError('required')">
+        Bitte vergessen Sie Ihre E-Mail-Adresse nicht.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="password"
+        type="password"
+        placeholder="Password">
+    </mat-form-field>
+  </form>
+  <div class="actions">
+    <button
+      (click)="submitCredentials()"
+      [disabled]="login.invalid"
+      mat-raised-button color="primary">
+      Login
+    </button>
+  </div>
+</awr-user-dialog>
