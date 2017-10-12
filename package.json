@@ -36,7 +36,7 @@
     "ngrx-store-freeze": "^0.1.9",
     "node-json-db": "^0.7.3",
     "normalize.css": "^7.0.0",
-    "rxjs": "^5.4.2",
+    "rxjs": "5.5.0-beta.5",
     "zone.js": "^0.8.16"
   },
   "devDependencies": {
