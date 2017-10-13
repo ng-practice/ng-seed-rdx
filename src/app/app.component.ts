@@ -5,7 +5,7 @@ import { ViewContainerProvider } from './component-library/contracts';
 import { NavigationLink } from './navigation/models';
 
 @Component({
-  selector: 'awr-root',
+  selector: 'awr-root', // <awr-root>
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

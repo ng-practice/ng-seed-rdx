@@ -14,4 +14,9 @@ export class Notes {
   all(): Observable<Note[]> {
     return this.http.get<Note[]>(`${this.endpoint}/notes/all`);
   }
+
+  create(note: Note): Observable<Note> {
+    return this.http
+      .post<Note>(`${this.endpoint}/notes/create`, note);
+  }
 }

@@ -1,7 +1,13 @@
-import { ComponentLibraryModule } from './../component-library/component-library.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NoteQuickAdd } from './board/note-quick-add/note-quick-add.component';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+
+import { ComponentLibraryModule } from '../component-library/component-library.module';
+
+import { Notes } from './api';
 
 import {
   MatCardModule,
@@ -19,6 +25,8 @@ import { NotesGrid, NoteCard } from './board';
   imports: [
     CommonModule,
 
+    ReactiveFormsModule,
+
     MatCardModule,
     MatInputModule,
     MatIconModule,
@@ -29,6 +37,7 @@ import { NotesGrid, NoteCard } from './board';
 
     NotesRoutingModule
   ],
-  declarations: [NotesGrid, NoteCard]
+  declarations: [NotesGrid, NoteCard, NoteQuickAdd],
+  providers: [Notes]
 })
 export class NotesModule { }

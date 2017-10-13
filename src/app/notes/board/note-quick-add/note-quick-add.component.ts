@@ -22,7 +22,7 @@ export class NoteQuickAdd implements OnInit {
 
   prepareQuickAddForm(): FormGroup {
     return this.fb.group({
-      title: ['', Validators.required],
+      title: ['', [Validators.required, Validators.pattern(/\w+/)]],
       text: ['', Validators.required]
     });
   }

@@ -1,3 +1,4 @@
+import { Note } from './model';
 import { Router, Request, Response } from 'express';
 import JsonDb = require('node-json-db');
 
@@ -42,8 +43,10 @@ export class Notes {
     return res.status(404).send(new Error(`Sorry, no note contains the title "${params.title}".`));
   }
 
-  createOrUpdate = (req: Request, res: Response) => {
-    const guid = this.notes.create(req.body);
+  createOrUpdate = ({ body }: Request, res: Response) => {
+    body.guid = this.createGuid();
+
+    const guid = this.notes.create(body);
 
     if (guid) {
       return res.status(201).send({
@@ -59,4 +62,11 @@ export class Notes {
     this.notes.remove(params.guid);
     return res.send('The note has been removed, successfully.');
   }
+
+  createGuid() {
+    function S4() {
+       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+    }
+    return (S4() + S4() + '-' + S4() + '-4' + S4().substr(0, 3) + '-' + S4() + '-' + S4() + S4() + S4()).toLowerCase();
+ }
 }

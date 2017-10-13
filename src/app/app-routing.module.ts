@@ -12,11 +12,11 @@ const routes: Route[] = [
     redirectTo: '/login',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'notes',
-  //   loadChildren: './notes/notes.module#NotesModule',
-  //   canLoad: [IsUserAuthenticated]
-  // },
+  {
+    path: 'notes',
+    loadChildren: './notes/notes.module#NotesModule',
+    canLoad: [IsUserAuthenticated]
+  },
   {
     path: 'feedback',
     loadChildren: './feedback/feedback.module#FeedbackModule',
